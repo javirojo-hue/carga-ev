@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d10">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Carga EV">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+  <title>Carga EV</title>
+</head>
+<body>
+<main>
+  <header>
+    <div class="logo">⚡</div>
+    <div><h1>Carga EV</h1><p>Calculadora de carga · batería 75 kWh</p></div>
+  </header>
+
+  <section class="card controls">
+    <div class="row"><label for="current">Carga actual</label><output id="currentOut">30%</output></div>
+    <input id="current" type="range" min="0" max="100" value="30" step="1">
+    <div class="row target"><label for="target">Carga objetivo</label><output id="targetOut">80%</output></div>
+    <input id="target" type="range" min="0" max="100" value="80" step="1">
+  </section>
+
+  <section class="summary">
+    <span>NECESITAS CARGAR</span>
+    <strong id="percent">50%</strong>
+    <b id="energy">37,5 kWh</b>
+  </section>
+
+  <h2>Tiempo estimado</h2>
+  <section class="results">
+    <article class="card result"><div class="ico">⌂</div><div><b>Casa</b><small>4,48 kW</small></div><strong id="home"></strong></article>
+    <article class="card result"><div class="ico">⚡</div><div><b>Supercargador</b><small>Hasta 180 kW · curva estimada</small></div><strong id="super"></strong></article>
+    <article class="card result"><div class="ico">◉</div><div><b>Cargador 22 kW</b><small>11 kW efectivos</small></div><strong id="kw22"></strong></article>
+    <article class="card result"><div class="ico">ϟ</div><div><b>Cargador 50 kW</b><small>25 kW efectivos</small></div><strong id="kw50"></strong></article>
+  </section>
+  <p class="note">Estimaciones orientativas. La potencia real puede variar por temperatura, batería, vehículo y cargador.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
